@@ -134,7 +134,7 @@ export default {
   background-image: url('/statics/baha-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 650px;
+  height: -webkit-fill-available;
   overflow: hidden;
 }
 </style>
