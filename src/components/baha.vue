@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar></navbar>
-    <div class="mainContent">
+    <div class="mainContent bahaBody">
       <div class="row">
         <div class="col-md-12">
           <h3>Pag-baha</h3>
@@ -129,3 +129,13 @@ export default {
   }
 }
 </script>
+<style scoped>
+.bahaBody {
+  background-image: url('/statics/baha-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: -webkit-fill-available;
+  overflow: hidden;
+}
+</style>
+
