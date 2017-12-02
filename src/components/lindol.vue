@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar></navbar>
-    <div class="mainContent">
+    <div class="mainContent lindolBody">
       <!-- HEADER -->
       <div class="row">
         <div class="col-md-12">
@@ -107,5 +107,11 @@ export default {
   background-color: #e67e22;
   color: white;
 }
+.lindolBody {
+  background-image: url('/statics/lindol-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 650px;
+  overflow: hidden;
+}
 </style>
-

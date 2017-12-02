@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar></navbar>
-    <div class="mainContent">
+    <div class="mainContent bagyoBody">
       <!-- HEADER -->
         <div class="row">
           <div class="col-md-12">
@@ -13,7 +13,7 @@
       <!-- WIZARD FORM -->
       <div class="row">
         <div class="col-md-12">
-          <form-wizard color="#1abc9c" title="Baha" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may bagyo."
+          <form-wizard color="#1abc9c" title="Bagyo" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may bagyo."
             back-button-text="Bumalik"
             next-button-text="Sunod"
             finish-button-text="Isumite">
@@ -82,6 +82,13 @@ export default {
 .panel-turquoise > .panel-heading {
   background-color: #1abc9c;
   color: white;
+}
+.bagyoBody {
+  background-image: url('/statics/bagyo-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 650px;
+  overflow: hidden;
 }
 </style>
 
