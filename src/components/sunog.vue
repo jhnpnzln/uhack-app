@@ -13,7 +13,7 @@
       <!-- FORM WIZARD -->
       <div class="row">
         <div class="col-md-12">
-          <form-wizard  color="#e74c3c" title="Sunog" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may sunog."
+          <form-wizard  @on-complete="onCompleteSunog" color="#e74c3c" title="Sunog" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may sunog."
             back-button-text="Bumalik"
             next-button-text="Sunod"
             finish-button-text="Isumite">
@@ -228,5 +228,9 @@ export default {
   background-size: cover;
   height: 650px;
   overflow: hidden;
+}
+.modal-header {
+  background-color: #e74c3c;
+  color: white;
 }
 </style>
