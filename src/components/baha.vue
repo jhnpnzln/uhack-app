@@ -157,7 +157,7 @@
                   <div class="funkyradio">
                     <div class="funkyradio-info">
                       <input type="radio" name="radio" id="radio5"/>
-                      <label for="radio3">Tama</label>
+                      <label for="radio5">Tama</label>
                     </div>
                   </div>
                 </div>
@@ -165,7 +165,7 @@
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
                       <input type="radio" name="radio" id="radio6" />
-                      <label for="radio4">Mali</label>
+                      <label for="radio6">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -179,7 +179,7 @@
                   <div class="funkyradio">
                     <div class="funkyradio-info">
                       <input type="radio" name="radio" id="radio7"/>
-                      <label for="radio3">Tama</label>
+                      <label for="radio7">Tama</label>
                     </div>
                   </div>
                 </div>
@@ -187,7 +187,7 @@
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
                       <input type="radio" name="radio" id="radio8" />
-                      <label for="radio4">Mali</label>
+                      <label for="radio8">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -201,7 +201,7 @@
                   <div class="funkyradio">
                     <div class="funkyradio-info">
                       <input type="radio" name="radio" id="radio9"/>
-                      <label for="radio3">Tama</label>
+                      <label for="radio9">Tama</label>
                     </div>
                   </div>
                 </div>
@@ -209,7 +209,7 @@
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
                       <input type="radio" name="radio" id="radio10" />
-                      <label for="radio4">Mali</label>
+                      <label for="radio10">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -223,7 +223,7 @@
                   <div class="funkyradio">
                     <div class="funkyradio-info">
                       <input type="radio" name="radio" id="radio11"/>
-                      <label for="radio3">Tama</label>
+                      <label for="radio11">Tama</label>
                     </div>
                   </div>
                 </div>
@@ -231,7 +231,7 @@
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
                       <input type="radio" name="radio" id="radio12" />
-                      <label for="radio4">Mali</label>
+                      <label for="radio12">Mali</label>
                     </div>
                   </div>
                 </div>
