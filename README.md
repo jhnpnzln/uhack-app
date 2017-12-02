@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Quasar App
 
 > A Quasar project
@@ -17,3 +18,7 @@ $ quasar build
 # lint code
 $ quasar lint
 ```
+=======
+# uhack-app
+our uhack2017 project
+>>>>>>> dafa4cab8b7de68d319cb03b7fbef5cf3d631312
