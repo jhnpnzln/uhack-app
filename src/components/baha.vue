@@ -112,7 +112,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-info">
-                      <input type="radio" name="radio" id="radio1"/>
+                      <input type="radio" name="radio" id="radio1" @click="getAns1('tama')"/>
                       <label for="radio1">Tama</label>
                     </div>
                   </div>
@@ -120,7 +120,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio2" />
+                      <input type="radio" name="radio" id="radio2" @click="getAns1('mali')"/>
                       <label for="radio2">Mali</label>
                     </div>
                   </div>
@@ -134,7 +134,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-info">
-                      <input type="radio" name="radio" id="radio3"/>
+                      <input type="radio" name="radio1" id="radio3" @click="getAns2('tama')"/>
                       <label for="radio3">Tama</label>
                     </div>
                   </div>
@@ -142,7 +142,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio4" />
+                      <input type="radio" name="radio1" id="radio4" @click="getAns2('mali')"/>
                       <label for="radio4">Mali</label>
                     </div>
                   </div>
@@ -156,7 +156,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-info">
-                      <input type="radio" name="radio" id="radio5"/>
+                      <input type="radio" name="radio2" id="radio5" @click="getAns3('tama')"/>
                       <label for="radio5">Tama</label>
                     </div>
                   </div>
@@ -164,7 +164,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio6" />
+                      <input type="radio" name="radio2" id="radio6" @click="getAns3('mali')"/>
                       <label for="radio6">Mali</label>
                     </div>
                   </div>
@@ -178,7 +178,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-info">
-                      <input type="radio" name="radio" id="radio7"/>
+                      <input type="radio" name="radio3" id="radio7" @click="getAns4('tama')"/>
                       <label for="radio7">Tama</label>
                     </div>
                   </div>
@@ -186,7 +186,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio8" />
+                      <input type="radio" name="radio3" id="radio8" @click="getAns4('mali')"/>
                       <label for="radio8">Mali</label>
                     </div>
                   </div>
@@ -200,7 +200,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-info">
-                      <input type="radio" name="radio" id="radio9"/>
+                      <input type="radio" name="radio4" id="radio9" @click="getAns5('tama')"/>
                       <label for="radio9">Tama</label>
                     </div>
                   </div>
@@ -208,7 +208,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio10" />
+                      <input type="radio" name="radio4" id="radio10" @click="getAns5('mali')"/>
                       <label for="radio10">Mali</label>
                     </div>
                   </div>
@@ -222,7 +222,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-info">
-                      <input type="radio" name="radio" id="radio11"/>
+                      <input type="radio" name="radio5" id="radio11" @click="getAns6('tama')"/>
                       <label for="radio11">Tama</label>
                     </div>
                   </div>
@@ -230,7 +230,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio12" />
+                      <input type="radio" name="radio5" id="radio12" @click="getAns6('mali')"/>
                       <label for="radio12">Mali</label>
                     </div>
                   </div>
@@ -252,6 +252,19 @@
 import Navbar from './Navbar'
 import {FormWizard, TabContent} from 'vue-form-wizard'
 export default {
+  props: ['cou'],
+  data () {
+    return {
+      ans1: '',
+      ans2: '',
+      ans3: '',
+      ans4: '',
+      ans5: '',
+      ans6: '',
+      score: 0,
+      coupon: 0
+    }
+  },
   components: {
     Navbar,
     FormWizard,
@@ -265,8 +278,49 @@ export default {
       this.$modal.hide('sunogModal')
     },
     submit () {
-      this.closeModal()
-      this.$toastr.success('Na-isumite na.', 'Ayos!')
+      alert(this.score)
+      if (this.score >= 4) {
+        this.$toastr.success('Nakakuha ka ng mataas na puntos', 'Puntos')
+        this.$toastr.success('Naipasamo ang pagsusulit.', 'Ayos!')
+        this.closeModal()
+        this.$router.push('/lindol')
+      }
+    },
+    getAns1 (n) {
+      this.ans1 = n
+      if (n === 'mali') {
+        this.score += 1
+      }
+    },
+    getAns2 (n) {
+      this.ans1 = n
+      if (n === 'tama') {
+        this.score += 1
+      }
+    },
+    getAns3 (n) {
+      this.ans1 = n
+      if (n === 'tama') {
+        this.score += 1
+      }
+    },
+    getAns4 (n) {
+      this.ans1 = n
+      if (n === 'mali') {
+        this.score += 1
+      }
+    },
+    getAns5 (n) {
+      this.ans1 = n
+      if (n === 'tama') {
+        this.score += 1
+      }
+    },
+    getAns6 (n) {
+      this.ans1 = n
+      if (n === 'tama') {
+        this.score += 1
+      }
     }
   }
 }

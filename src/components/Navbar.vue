@@ -7,7 +7,6 @@
         </router-link>     
       </div>
       <div class="pull-right" style="padding-right:50px">
-        0
         <img src="http://www.myrestaurantappbuilder.com/wp-content/uploads/2015/07/lesson_coupon.png" width="50" height="35" class="d-inline-block align-top logo" alt="">
       </div>
     </nav>
@@ -17,6 +16,12 @@
     </aside>
   </div>
 </template>
+
+<script>
+export default {
+
+}
+</script>
 
 <style scoped>
 .navbar{
@@ -31,6 +36,10 @@
 }
 .logo-container a {
   position: static;
+}
+
+.hidden {
+  display: none;
 }
 </style>
 
