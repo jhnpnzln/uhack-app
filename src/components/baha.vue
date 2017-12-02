@@ -64,37 +64,20 @@
             <!-- END QUESTION 3 -->
 
             <!-- QUESTION 4 -->
-            <tab-content title="Title 4" icon="fa fa-question">
+            <!-- <tab-content title="Title 4" icon="fa fa-question">
               <div class="panel panel-primary">
                 <div class="panel-heading">
                   <h4 class="panel-title">Mga tanong (tama o mali)</h4>
                 </div>
                 <div class="panel-body">
-                  <p>1. Lumangoy sa baha. </p>
-                  <div><input type="radio" name="baha1">Tama</input>
-                  <input type="radio" name="baha1">Mali</input></div>
-                  <p>2. Dapat ba natin ipasuri  sa electrician ang mga bagay na nasira ng baha?</p>
-                  <div><input type="radio" name="baha2">Tama</input>
-                  <input type="radio" name="baha2">Mali</input></div>
-                  <p>3. Manatiling mahinahon at alerto.</p>
-                  <div><input type="radio" name="baha3">Tama</input>
-                  <input type="radio" name="baha3">Mali</input></div>
-                  <p>4. Sumunod kaagad kapag inutos ng lokal na pamahalaan ang paglikas?</p>
-                  <div><input type="radio" name="baha4">Tama</input>
-                  <input type="radio" name="baha4">Mali</input></div>
-                  <p>5. Magtabi ng malinis na inuming tubig sa mga sisidlan bago pa dumating ang baha?</p>
-                  <div><input type="radio" name="baha5">Tama</input>
-                  <input type="radio" name="baha5">Mali</input></div>
-                  <p>6. Kailangan ba natin ipaalam sa kinauukulang kung may putol na kable/tubo o kawad ?</p>
-                  <div><input type="radio" name="baha6">Tama</input>
-                  <input type="radio" name="baha6">Mali</input></div>
+                  
                 </div>
               </div>
-            </tab-content>
+            </tab-content> -->
             <!-- END QUESTION 4 -->
 
             <!-- QUESTION 4 -->
-            <tab-content title="Title 5" icon="fa fa-question">
+            <!-- <tab-content title="Title 5" icon="fa fa-question">
               <div class="panel panel-primary">
                 <div class="panel-heading">
                   <h4 class="panel-title">Title05</h4>
@@ -103,7 +86,7 @@
 
                 </div>
               </div>
-            </tab-content>
+            </tab-content> -->
             <!-- END QUESTION 5 -->
 
           </form-wizard>
@@ -111,6 +94,158 @@
       </div>
     </div>
       
+
+      <!-- ******** MODAL ******** -->
+      <modal name="sunogModal" width="50%" height="auto" :scrollable="true">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" @click="closeModal" style="color:white;">&times;</button>
+            <h4 class="modal-title"><i class="fa fa-question-circle"></i>&nbsp;Tanong</h4>
+          </div>
+        </div>
+        <div class="modal_body">
+          <form action="">
+            <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>1. Lumangoy sa baha. </p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-info">
+                      <input type="radio" name="radio" id="radio1"/>
+                      <label for="radio1">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio2" />
+                      <label for="radio2">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>2. Dapat ba natin ipasuri  sa electrician ang mga bagay na nasira ng baha?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-info">
+                      <input type="radio" name="radio" id="radio3"/>
+                      <label for="radio3">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio4" />
+                      <label for="radio4">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>3. Manatiling mahinahon at alerto.</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-info">
+                      <input type="radio" name="radio" id="radio5"/>
+                      <label for="radio3">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio6" />
+                      <label for="radio4">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>4. Sumunod kaagad kapag inutos ng lokal na pamahalaan ang paglikas?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-info">
+                      <input type="radio" name="radio" id="radio7"/>
+                      <label for="radio3">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio8" />
+                      <label for="radio4">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>5. Magtabi ng malinis na inuming tubig sa mga sisidlan bago pa dumating ang baha?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-info">
+                      <input type="radio" name="radio" id="radio9"/>
+                      <label for="radio3">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio10" />
+                      <label for="radio4">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>6. Kailangan ba natin ipaalam sa kinauukulang kung may putol na kable/tubo o kawad ?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-info">
+                      <input type="radio" name="radio" id="radio11"/>
+                      <label for="radio3">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio12" />
+                      <label for="radio4">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                  <div class="button-cotainer pull-right">
+                    <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
+                    <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
+                  </div>
+        </form>
+        </div>
+        
+
+      </modal>
   </div>
 </template>
 <script>
@@ -124,7 +259,14 @@ export default {
   },
   methods: {
     onCompleteBaha () {
-      this.$toastr.success('Naisumite na.', 'Ayos!')
+      this.$modal.show('sunogModal')
+    },
+    closeModal () {
+      this.$modal.hide('sunogModal')
+    },
+    submit () {
+      this.closeModal()
+      this.$toastr.success('Na-isumite na.', 'Ayos!')
     }
   }
 }
@@ -134,8 +276,18 @@ export default {
   background-image: url('/statics/baha-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: -webkit-fill-available;
+  height: 100%;
   overflow: hidden;
+}
+.modal-header {
+  background-color: #337ab7;
+  color: white;
+}
+.modal_body {
+  padding: 10px;
+}
+.button-cotainer {
+  margin-bottom: 10px;
 }
 </style>
 

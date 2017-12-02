@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar></navbar>
-    <div class="mainContent">
+    <div class="mainContent sunogBody">
       <!-- HEADER -->
       <div class="row">
         <div class="col-md-12">
@@ -115,5 +115,12 @@ export default {
 .panel-red > .panel-heading {
   background-color: #e74c3c;
   color: white;
+}
+.sunogBody {
+  background-image: url('/statics/sunog-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 650px;
+  overflow: hidden;
 }
 </style>
