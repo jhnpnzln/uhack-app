@@ -1,0 +1,101 @@
+<template>
+  <div>
+    <navbar></navbar>
+    <div class="mainContent">
+      <!-- HEADER -->
+      <div class="row">
+          <div class="col-md-12">
+            <h3><i class="fa fa-dashboard"></i>&nbsp;Index</h3>
+          </div>
+        </div>
+      <!-- END HEADER -->
+      
+      <!-- MAP CONTAINER -->
+        <div class="row">
+          <div class="col-md-9">
+            <div class="map-canvas">
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                  <iframe width="100%" height="550px" id="gmap_canvas" src="https://maps.google.com/maps?q=bacoor&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel panel-green">
+              <div class="panel-heading">
+                <h4 class="panel-title text-center">Prone</h4>
+              </div>
+              <div class="panel-body">
+                <ul id="proneList">
+                  <li>Sample</li>
+                  <li>Sample</li>
+                  <li>Sample</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END MAP CONTAINER -->
+    </div>
+  </div>
+</template>
+<script>
+import Navbar from './Navbar'
+// var marker
+export default {
+  components: {
+    Navbar
+  },
+  created () {
+    // marker = new google.maps.Marker({
+    //   map: map,
+    //   draggable: true,
+    //   animation: google.maps.Animation.DROP,
+    //   position: {lat: 59.327, lng: 18.067}
+    // })
+    // marker.addListener('click', toggleBounce);
+  }
+}
+
+// Vue.components('map-content', {
+//   template: '<div class="mapouter"><div class="gmap_canvas"><iframe width="819" height="852" id="gmap_canvas" src="https://maps.google.com/maps?q=bacoor&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">pure black</a></div><style>.mapouter{overflow:hidden;height:852px;width:819px;}.gmap_canvas {background:none!important;height:852px;width:819px;}</style></div>'
+// })
+</script>
+
+<style scoped>
+#proneList {
+  list-style: none;
+}
+
+/* PANEL GREEN */
+.panel-green {
+  border-color: #2ecc71 !important;
+}
+.panel-green > .panel-heading {
+  background-color: #2ecc71 !important;
+  color: white;
+}
+/* END PANEL GREEN */
+
+/* MAP STYLE */
+.map-canvas {
+  width: 100%;
+  height: 550px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.mapouter {
+  overflow:hidden;
+  height:550px;
+  width:100%;
+  }
+.gmap_canvas {
+  background:none!important;
+  height:inherit;
+  width:100%;
+  }
+  /* END MAP STYLE */
+</style>
+
