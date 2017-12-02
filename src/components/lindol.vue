@@ -71,7 +71,7 @@
                   <h4 class="panel-title">Mga tanong (tama o mali)</h4>
                 </div>
                 <div class="panel-body">
-                  <p>1. Magwalang bahala, matatapos din yan.  </p>
+                  <p>1. Magwalang bahala, matatapos din yan..  </p>
                   <div><input type="radio" name="lindol1">Tama</input>
                   <input type="radio" name="lindol1">Mali</input></div>
                   <p>2. Iiwasan natin ang malapit sa dagat ?</p>
