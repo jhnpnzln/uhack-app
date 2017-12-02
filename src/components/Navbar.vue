@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-light bg-faded navbar-fixed-top">
+    <nav class="navbar navbar-light bg-faded">
       <div class="logo-container">
         <router-link :to="{path: '/'}" class="navbar-brand" style="color: white;">
           <img src="statics/flat-pinoy-icon.png" width="50" height="50" class="d-inline-block align-top logo" alt="">

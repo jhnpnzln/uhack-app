@@ -12,7 +12,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <form-wizard color="#e67e22" title="Lindol" subtitle="Mga dapat gawin bago, habang at pagkatapos ng lindol."
+          <form-wizard @on-complete="onCompleteLindol" color="#e67e22" title="Lindol" subtitle="Mga dapat gawin bago, habang at pagkatapos ng lindol."
             back-button-text="Bumalik"
             next-button-text="Sunod"
             finish-button-text="Isumite">
@@ -63,54 +63,162 @@
               </div>
             </tab-content>
             <!-- END PANEL 03 -->
-
-            <!-- PANEL 04 -->
-            <tab-content title="Title 1" icon="fa fa-question">
-              <div class="panel panel-yellow">
-                <div class="panel-heading">
-                  <h4 class="panel-title">Mga tanong (tama o mali)</h4>
-                </div>
-                <div class="panel-body">
-                  <p>1. Magwalang bahala, matatapos din yan..  </p>
-                  <div><input type="radio" name="lindol1">Tama</input>
-                  <input type="radio" name="lindol1">Mali</input></div>
-                  <p>2. Iiwasan natin ang malapit sa dagat ?</p>
-                  <div><input type="radio" name="lindol2">Tama</input>
-                  <input type="radio" name="lindol2">Mali</input></div>
-                  <p>3. Alamin ang earthquake plan sa bahay, opisina o paaralan.</p>
-                  <div><input type="radio" name="lindol3">Tama</input>
-                  <input type="radio" name="lindol3">Mali</input></div>
-                  <p>4. Magtago sa ilalim ng lamesa. </p>
-                  <div><input type="radio" name="lindol4">Tama</input>
-                  <input type="radio" name="lindol4">Mali</input></div>
-                  <p>5. Ihahanda ba natin ang ating sarili dulot ng lindol?</p>
-                  <div><input type="radio" name="lindol5">Tama</input>
-                  <input type="radio" name="lindol5">Mali</input></div>
-                  <p>6. Patayin ang kuryente, tubig, at gas kapag nagbigay ng babala ang lokal na pamahalaan?</p>
-                  <div><input type="radio" name="lindol6">Tama</input>
-                  <input type="radio" name="lindol6">Mali</input></div>
-                </div>
-              </div>
-            </tab-content>
-            <!-- END PANEL 04 -->
-
-            <!-- PANEL 05 -->
-            <tab-content title="Title 1" icon="fa fa-question">
-              <div class="panel panel-yellow">
-                <div class="panel-heading">
-                  <h4 class="panel-title">Title05</h4>
-                </div>
-                <div class="panel-body">
-
-                </div>
-              </div>
-            </tab-content>
-            <!-- END PANEL 05 -->
           </form-wizard>
         </div>
       </div>
 
     </div>
+
+    <!-- ********* MODAL ******* -->
+    <modal name="lindolModal" width="50%" height="auto" :scrollable="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" @click="closeModal" style="color:white;">&times;</button>
+          <h4 class="modal-title"><i class="fa fa-question-circle"></i>&nbsp;Mga Tanong</h4>
+        </div>
+      </div>
+      <div class="modal_body">
+        <form action="">
+          <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>1. Magwalang bahala, matatapos din yan..  </p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio1"/>
+                      <label for="radio1">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio2" />
+                      <label for="radio2">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>2. Iiwasan natin ang malapit sa dagat ?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio3"/>
+                      <label for="radio3">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio3" />
+                      <label for="radio3">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>3. Alamin ang earthquake plan sa bahay, opisina o paaralan.</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio4"/>
+                      <label for="radio4">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio5" />
+                      <label for="radio5">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>4. Magtago sa ilalim ng lamesa. </p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio6"/>
+                      <label for="radio6">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio7" />
+                      <label for="radio7">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>5. Ihahanda ba natin ang ating sarili dulot ng lindol?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio8"/>
+                      <label for="radio8">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio9" />
+                      <label for="radio9">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>6. Patayin ang kuryente, tubig, at gas kapag nagbigay ng babala ang lokal na pamahalaan?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio10"/>
+                      <label for="radio8">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio11" />
+                      <label for="radio9">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="button-cotainer pull-right">
+                <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
+                <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
+              </div>
+
+        </form>
+      </div>
+    </modal>
   </div>
 </template>
 <script>
@@ -121,6 +229,18 @@ export default {
     Navbar,
     FormWizard,
     TabContent
+  },
+  methods: {
+    onCompleteLindol () {
+      this.$modal.show('lindolModal')
+    },
+    closeModal () {
+      this.$modal.hide('lindolModal')
+    },
+    submit () {
+      this.closeModal()
+      this.$toastr.success('Na-isumite na.', 'Ayos!')
+    }
   }
 }
 </script>
@@ -139,5 +259,9 @@ export default {
   background-size: cover;
   height: 650px;
   overflow: hidden;
+}
+.modal-header {
+  background-color: #e67e22;
+  color: white;
 }
 </style>
