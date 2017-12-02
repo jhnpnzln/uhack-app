@@ -29,6 +29,7 @@ export default new VueRouter({
     { path: '/baha', component: load('baha') },
     { path: '/lindol', component: load('lindol') },
     { path: '/sunog', component: load('sunog') },
+    { path: '/bagyo', component: load('bagyo') },
     { path: '/Hello', component: load('Hello') },
 
     // Always leave this last one

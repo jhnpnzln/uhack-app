@@ -13,12 +13,15 @@
       <!-- FORM WIZARD -->
       <div class="row">
         <div class="col-md-12">
-          <form-wizard color="#e74c3c" title="Sunog" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may sunog.">
+          <form-wizard color="#e74c3c" title="Sunog" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may sunog."
+            back-button-text="Bumalik"
+            next-button-text="Sunod"
+            finish-button-text="Isumite">
             <!-- PANEL 01 -->
-            <tab-content title="Title01" icon="fa fa-question">
+            <tab-content title="Bago ang sunog" icon="fa fa-question">
               <div class="panel panel-red">
                 <div class="panel-heading">
-                  <h4 class="panel-title">Title01</h4>
+                  <h4 class="panel-title">Bago ang sunog</h4>
                 </div>
                 <div class="panel-body">
 

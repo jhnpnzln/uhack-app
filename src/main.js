@@ -15,10 +15,13 @@ import Quasar from 'quasar'
 import router from './router'
 import VueFormWizard from 'vue-form-wizard'
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'
+import VueToastr2 from 'vue-toastr-2'
+import 'vue-toastr-2/dist/vue-toastr-2.min.css'
 
 Vue.config.productionTip = false
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(VueFormWizard)
+Vue.use(VueToastr2)
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')

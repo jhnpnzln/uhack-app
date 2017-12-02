@@ -10,12 +10,15 @@
 
       <div class="row">
         <div class="col-md-12">
-          <form-wizard color="#337ab7" title="Baha" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may pag-baha.">
+          <form-wizard @on-complete="onCompleteBaha" color="#337ab7" title="Baha" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may pag-baha."
+            back-button-text="Bumalik"
+            next-button-text="Sunod"
+            finish-button-text="Isumite">
             <!-- QUESTION 1 -->
-            <tab-content title="Title 1" icon="fa fa-question">
+            <tab-content title="Bago ang pag-baha" icon="fa fa-info">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h4 class="panel-title">Title01</h4>
+                  <h4 class="panel-title">Bago ang pag-baha</h4>
                 </div>
                 <div class="panel-body">
 
@@ -25,10 +28,10 @@
             <!-- END QUESTION 1 -->
 
             <!-- QUESTION 2 -->
-            <tab-content title="Title 2" icon="fa fa-question">
+            <tab-content title="Habang bumabaha" icon="fa fa-info">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h4 class="panel-title">Title02</h4>
+                  <h4 class="panel-title">Habang bumabaha</h4>
                 </div>
                 <div class="panel-body">
 
@@ -38,10 +41,10 @@
             <!-- END QUESTION 2 -->
 
             <!-- QUESTION 3 -->
-            <tab-content title="Title 3" icon="fa fa-question">
+            <tab-content title="Pagkatapos ng pag-baha" icon="fa fa-info">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h4 class="panel-title">Title03</h4>
+                  <h4 class="panel-title">Pagkatapos ng pag-baha</h4>
                 </div>
                 <div class="panel-body">
 
@@ -91,6 +94,11 @@ export default {
     Navbar,
     FormWizard,
     TabContent
+  },
+  methods: {
+    onCompleteBaha () {
+      this.$toastr.success('Naisumite na.', 'Ayos!')
+    }
   }
 }
 </script>

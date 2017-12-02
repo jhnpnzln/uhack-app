@@ -12,12 +12,15 @@
 
       <div class="row">
         <div class="col-md-12">
-          <form-wizard color="#e67e22" title="Lindol" subtitle="Mga dapat gawin at hindi dapat gawin kapag may lindol.">
+          <form-wizard color="#e67e22" title="Lindol" subtitle="Mga dapat gawin at hindi dapat gawin kapag may lindol."
+            back-button-text="Bumalik"
+            next-button-text="Sunod"
+            finish-button-text="Isumite">
             <!-- PANEL 01 -->
-            <tab-content title="Title 1" icon="fa fa-question">
+            <tab-content title="Bago lumindol" icon="fa fa-question">
               <div class="panel panel-yellow">
                 <div class="panel-heading">
-                  <h4 class="panel-title">Title01</h4>
+                  <h4 class="panel-title">Bago lumindol</h4>
                 </div>
                 <div class="panel-body">
 
@@ -27,10 +30,10 @@
             <!-- END PANEL 01 -->
 
             <!-- PANEL 02 -->
-            <tab-content title="Title 2" icon="fa fa-question">
-              <div class="panel panel-warning">
+            <tab-content title="Habang lumilindol" icon="fa fa-question">
+              <div class="panel panel-yellow">
                 <div class="panel-heading">
-                  <h4 class="panel-title">Title02</h4>
+                  <h4 class="panel-title">Habang lumilindol</h4>
                 </div>
                 <div class="panel-body">
 
@@ -40,10 +43,10 @@
             <!-- END PANEL 02 -->
 
             <!-- PANEL 03 -->
-            <tab-content title="Title 3" icon="fa fa-question">
-              <div class="panel panel-success">
+            <tab-content title="Pagkatapos lumindol" icon="fa fa-question">
+              <div class="panel panel-yellow">
                 <div class="panel-heading">
-                  <h4 class="panel-title">Title03</h4>
+                  <h4 class="panel-title">Pagkatapos lumindol</h4>
                 </div>
                 <div class="panel-body">
 
@@ -54,7 +57,7 @@
 
             <!-- PANEL 04 -->
             <tab-content title="Title 1" icon="fa fa-question">
-              <div class="panel panel-success">
+              <div class="panel panel-yellow">
                 <div class="panel-heading">
                   <h4 class="panel-title">Title04</h4>
                 </div>
@@ -67,7 +70,7 @@
 
             <!-- PANEL 05 -->
             <tab-content title="Title 1" icon="fa fa-question">
-              <div class="panel panel-success">
+              <div class="panel panel-yellow">
                 <div class="panel-heading">
                   <h4 class="panel-title">Title05</h4>
                 </div>

@@ -11,7 +11,7 @@
       <!-- END HEADER -->
       
       <!-- MAP CONTAINER -->
-        <div class="row">
+        <div class="row row-eq-height">
           <div class="col-md-9">
             <div class="map-canvas">
               <div class="mapouter">
@@ -25,9 +25,23 @@
           <div class="col-md-3">
             <div class="panel panel-green">
               <div class="panel-heading">
-                <h4 class="panel-title text-center">Prone</h4>
+                <h4 class="panel-title text-center">Prone Level</h4>
               </div>
               <div class="panel-body">
+                <ul class="proneLegend">
+                  <li>
+                    <div class="legendBullet red"></div>
+                  </li>
+                  <li>
+                    <div class="legendBullet orange"></div>
+                  </li>
+                  <li>
+                    <div class="legendBullet yellow"></div>
+                  </li>
+                  <li>
+                    <div class="legendBullet green"></div>
+                  </li>
+                </ul>
                 <ul id="proneList">
                   <li>Sample</li>
                   <li>Sample</li>
@@ -65,6 +79,33 @@ export default {
 </script>
 
 <style scoped>
+.panel-body {
+  height: 512px;
+}
+ul.proneLegend{
+  list-style: none;
+}
+ul.proneLegend li {
+  display: inline;
+}
+.legendBullet {
+  height: 10px;
+  width: 10px;
+  padding: 5px;
+  border-radius: 30px; 
+}
+.legendBullet.red {
+  background-color: #e74c3c;
+}
+.legendBullet.orange {
+  background-color: #e67e22;
+}
+.legendBullet.yellow {
+  background-color: #f1c40f;
+}
+.legendBullet.green {
+  background-color:#2ecc71;
+}
 #proneList {
   list-style: none;
 }
