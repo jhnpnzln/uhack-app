@@ -22,7 +22,7 @@ export default {}
 .modal_body {
   padding: 10px;
 }
-.button-cotainer {
+.button-container {
   margin-bottom: 10px;
 }
 </style>
