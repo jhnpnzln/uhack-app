@@ -255,22 +255,15 @@ export default {
       if (this.QBagyo5 === 'Tama') {
         this.Score++
       }
-      if (this.Score > this.Pass) {
-        this.$toastr.success('Na-isumite na.', 'Ayos!')
+      if (this.Score >= this.Pass) {
+        this.$toastr.success('Nakakuha ka ng mataas na puntos', 'Puntos')
+        this.$toastr.success('Naipasamo ang pagsusulit.', 'Ayos!')
         this.closeModal()
-        this.QBagyo1 = ''
-        this.QBagyo2 = ''
-        this.QBagyo3 = ''
-        this.QBagyo4 = ''
-        this.QBagyo5 = ''
+        this.$router.push('/sunog')
       }
       else {
+        this.$toastr.success('Ang nakuha mong puntos ay mababa', 'Puntos')
         this.closeModal()
-        this.QBagyo1 = ''
-        this.QBagyo2 = ''
-        this.QBagyo3 = ''
-        this.QBagyo4 = ''
-        this.QBagyo5 = ''
       }
     }
   }

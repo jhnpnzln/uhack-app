@@ -230,19 +230,14 @@ export default {
         this.score++
       }
       if (this.score > this.pass) {
-        this.$toastr.success('Na-isumite na.', 'Ayos!')
-        this.$modal.hide('sunogModal')
-        this.slctQ1 = ''
-        this.slctQ2 = ''
-        this.slctQ3 = ''
-        this.slctQ4 = ''
+        this.$toastr.success('Nakakuha ka ng mataas na puntos', 'Puntos')
+        this.$toastr.success('Naipasamo ang pagsusulit.', 'Ayos!')
+        this.closeModal()
+        this.$router.push('/')
       }
       else {
+        this.$toastr.success('Ang nakuha mong puntos ay mababa', 'Puntos')
         this.$modal.hide('sunogModal')
-        this.slctQ1 = ''
-        this.slctQ2 = ''
-        this.slctQ3 = ''
-        this.slctQ4 = ''
       }
     }
   }

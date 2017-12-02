@@ -251,41 +251,33 @@ export default {
     },
     submit () {
       if (this.QLindol1 === 'Mali') {
-        this.Score++
+        this.Score += 1
       }
       if (this.QLindol2 === 'Tama') {
-        this.Score++
+        this.Score += 1
       }
       if (this.QLindol3 === 'Tama') {
-        this.Score++
+        this.Score += 1
       }
       if (this.QLindol4 === 'Tama') {
-        this.Score++
+        this.Score += 1
       }
       if (this.QLindol5 === 'Tama') {
-        this.Score++
+        this.Score += 1
       }
       if (this.QLindol6 === 'Tama') {
-        this.Score++
+        this.Score += 1
       }
-      if (this.Score > this.Pass) {
-        this.$toastr.success('Na-isumite na.', 'Ayos!')
+      if (this.Score >= this.Pass) {
+        alert(this.Score)
+        this.$toastr.success('Nakakuha ka ng mataas na puntos', 'Puntos')
+        this.$toastr.success('Naipasamo ang pagsusulit.', 'Ayos!')
         this.closeModal()
-        this.QLindol1 = ''
-        this.QLindol2 = ''
-        this.QLindol3 = ''
-        this.QLindol4 = ''
-        this.QLindol5 = ''
-        this.QLindol6 = ''
+        this.$router.push('/bagyo')
       }
       else {
+        this.$toastr.success('Ang nakuha mong puntos ay mababa', 'Puntos')
         this.closeModal()
-        this.QLindol1 = ''
-        this.QLindol2 = ''
-        this.QLindol3 = ''
-        this.QLindol4 = ''
-        this.QLindol5 = ''
-        this.QLindol6 = ''
       }
     }
   }

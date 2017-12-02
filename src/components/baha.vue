@@ -278,12 +278,15 @@ export default {
       this.$modal.hide('sunogModal')
     },
     submit () {
-      alert(this.score)
       if (this.score >= 4) {
         this.$toastr.success('Nakakuha ka ng mataas na puntos', 'Puntos')
         this.$toastr.success('Naipasamo ang pagsusulit.', 'Ayos!')
         this.closeModal()
         this.$router.push('/lindol')
+      }
+      else {
+        this.$toastr.success('Ang nakuha mong puntos ay mababa', 'Puntos')
+        this.closeModal()
       }
     },
     getAns1 (n) {
