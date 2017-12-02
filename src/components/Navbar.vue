@@ -4,9 +4,12 @@
       <div class="logo-container">
         <router-link :to="{path: '/'}" class="navbar-brand" style="color: white;">
           <img src="statics/flat-pinoy-icon.png" width="50" height="50" class="d-inline-block align-top logo" alt="">
-        </router-link>
+        </router-link>     
       </div>
-      
+      <div class="pull-right" style="padding-right:50px">
+        0
+        <img src="http://www.myrestaurantappbuilder.com/wp-content/uploads/2015/07/lesson_coupon.png" width="50" height="35" class="d-inline-block align-top logo" alt="">
+      </div>
     </nav>
 
     <aside>

@@ -30,22 +30,22 @@
               <div class="panel-body">
                 <ul class="proneLegend">
                   <li>
-                    <div class="legendBullet red"></div>
+                    <div class="legendBullet red width"></div>
                   </li>
+                  <li><router-link to="baha">Pagbaha</router-link></li>
                   <li>
-                    <div class="legendBullet orange"></div>
+                    <div class="legendBullet orange width"></div>
                   </li>
+                  <li><router-link to="bagyo">Bagyo</router-link></li>
                   <li>
-                    <div class="legendBullet yellow"></div>
+                    <div class="legendBullet yellow width"></div>
                   </li>
+                  <li>&nbsp</li>
                   <li>
-                    <div class="legendBullet green"></div>
+                    <div class="legendBullet green width"></div>
                   </li>
-                </ul>
-                <ul id="proneList">
-                  <li>Sample</li>
-                  <li>Sample</li>
-                  <li>Sample</li>
+                  <li><router-link to="lindol">Lindol</router-link></li><br>
+                  <li><router-link to="sunog">Sunog</router-link></li>
                 </ul>
               </div>
             </div>
@@ -136,6 +136,10 @@ ul.proneLegend li {
   background:none!important;
   height:inherit;
   width:100%;
+  }
+
+  .width {
+    width: 150px;
   }
   /* END MAP STYLE */
 </style>
