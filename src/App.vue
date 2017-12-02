@@ -19,4 +19,10 @@ export default {}
   background-color: #fafafa;
   height: 100%;
 }
+.modal_body {
+  padding: 10px;
+}
+.button-cotainer {
+  margin-bottom: 10px;
+}
 </style>

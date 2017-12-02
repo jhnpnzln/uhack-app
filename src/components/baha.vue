@@ -100,7 +100,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" @click="closeModal" style="color:white;">&times;</button>
-            <h4 class="modal-title"><i class="fa fa-question-circle"></i>&nbsp;Tanong</h4>
+            <h4 class="modal-title"><i class="fa fa-question-circle"></i>&nbsp;Mga Tanong</h4>
           </div>
         </div>
         <div class="modal_body">
@@ -276,18 +276,12 @@ export default {
   background-image: url('/statics/baha-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 650px;
   overflow: hidden;
 }
 .modal-header {
   background-color: #337ab7;
   color: white;
-}
-.modal_body {
-  padding: 10px;
-}
-.button-cotainer {
-  margin-bottom: 10px;
 }
 </style>
 
