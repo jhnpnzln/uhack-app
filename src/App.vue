@@ -15,7 +15,6 @@ export default {}
 <style>
 .mainContent{
   padding: 10px;
-  margin-top: 30px;
   background-color: #fafafa;
   height: 100%;
 }
