@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar></navbar>
-    <div class="mainContent">
+    <div class="mainContent bagyoBody">
       <!-- HEADER -->
         <div class="row">
           <div class="col-md-12">
@@ -128,6 +128,13 @@ export default {
 .panel-turquoise > .panel-heading {
   background-color: #1abc9c;
   color: white;
+}
+.bagyoBody {
+  background-image: url('/statics/bagyo-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 650px;
+  overflow: hidden;
 }
 </style>
 
