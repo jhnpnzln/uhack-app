@@ -17,16 +17,19 @@ import VueFormWizard from 'vue-form-wizard'
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 import VueToastr2 from 'vue-toastr-2'
 import 'vue-toastr-2/dist/vue-toastr-2.min.css'
+import VModal from 'vue-js-modal'
 
 Vue.config.productionTip = false
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(VueFormWizard)
 Vue.use(VueToastr2)
+Vue.use(VModal)
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')
 }
 import 'quasar-extras/material-icons'
+require('./assets/css/style.css')
 // import 'quasar-extras/ionicons'
 // import 'quasar-extras/fontawesome'
 // import 'quasar-extras/animate'
