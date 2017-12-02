@@ -237,7 +237,7 @@
                 </div>
               </div>
 
-                  <div class="button-cotainer pull-right">
+                  <div class="button-container pull-right">
                     <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
                     <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
                   </div>

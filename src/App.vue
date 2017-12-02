@@ -15,14 +15,13 @@ export default {}
 <style>
 .mainContent{
   padding: 10px;
-  margin-top: 30px;
   background-color: #fafafa;
   height: 100%;
 }
 .modal_body {
   padding: 10px;
 }
-.button-cotainer {
+.button-container {
   margin-bottom: 10px;
 }
 </style>

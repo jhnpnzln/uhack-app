@@ -13,7 +13,7 @@
       <!-- FORM WIZARD -->
       <div class="row">
         <div class="col-md-12">
-          <form-wizard  color="#e74c3c" title="Sunog" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may sunog."
+          <form-wizard  @on-complete="onCompleteSunog" color="#e74c3c" title="Sunog" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may sunog."
             back-button-text="Bumalik"
             next-button-text="Sunod"
             finish-button-text="Isumite">
@@ -64,36 +64,130 @@
               </div>
             </tab-content>
             <!-- END PANEL 03 -->
-
-          
-            <!-- PANEL 05 -->
-            <tab-content title="Katanungan" icon="fa fa-question">
-              <div class="panel panel-red">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> Mga tanong(tama o mali)</h4>
-                </div>
-                <div class="panel-body">
-                  <p>1.Nainspekyun na ng kinauukulan ang iyong bahay?</p>
-                  <input type="radio" name="question1">Tama
-                  <input type="radio" name="question1">Mali
-                  <p>2.Tumawag ng bumbero. </p>
-                    <input type="radio" name="question2">Tama
-                  <input type="radio" name="question2">Mali
-                  <p>3.Aalisin ba natin ang mga bagay na pedeng mag bigay ng karagdagang sunog?</p>
-                    <input type="radio" name="question3">Tama
-                  <input type="radio" name="question3">Mali
-                  <p>4.Ibaba ang main switch. </p>
-                    <input type="radio" name="question4">Tama
-                  <input type="radio" name="question4">Mali
-                </div>
-              </div>
-            </tab-content>
             <!-- END PANEL 05 -->
           </form-wizard>
         </div>
       </div>
       <!-- END FORM WIZARD -->
     </div>
+
+    <!-- ********** MODAL *********** -->
+    <modal name="sunogModal" width="50%" height="auto" :scrollable="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" @click="closeModal" style="color:white;">&times;</button>
+          <h4 class="modal-title"><i class="fa fa-question-circle"></i>&nbsp;Mga Tanong</h4>
+        </div>
+      </div>
+
+      <div class="modal_body">
+        <form action="">
+          <div class="form-group row">
+            <div class="funkyradio">
+                <div class="col-md-12 col-xs-6">
+                  <p>1.Nainspekyun na ng kinauukulan ang iyong bahay?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio1"/>
+                      <label for="radio1">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio2" />
+                      <label for="radio2">Mali</label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="funkyradio">
+                <div class="col-md-12 col-xs-6">
+                  <p>2.Tumawag ng bumbero. </p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio2"/>
+                      <label for="radio2">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio3" />
+                      <label for="radio3">Mali</label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="funkyradio">
+                <div class="col-md-12 col-xs-6">
+                  <p>3.Aalisin ba natin ang mga bagay na pedeng mag bigay ng karagdagang sunog?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio4"/>
+                      <label for="radio4">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio5" />
+                      <label for="radio5">Mali</label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="funkyradio">
+                <div class="col-md-12 col-xs-6">
+                  <h4 class="panel-title"> Mga tanong(tama o mali)</h4>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio6"/>
+                      <label for="radio6">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio7" />
+                      <label for="radio7">Mali</label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="button-container pull-right">
+            <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
+            <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
+          </div>
+        </form>
+      </div>
+
+      
+
+    </modal>
   </div>
 </template>
 <script>
@@ -104,6 +198,18 @@ export default {
     Navbar,
     FormWizard,
     TabContent
+  },
+  methods: {
+    onCompleteSunog () {
+      this.$modal.show('sunogModal')
+    },
+    closeModal () {
+      this.$modal.hide('sunogModal')
+    },
+    submit () {
+      this.$toastr('Naisumite na!', 'Ayos!')
+      this.closeModal()
+    }
   }
 }
 </script>
@@ -122,5 +228,9 @@ export default {
   background-size: cover;
   height: 650px;
   overflow: hidden;
+}
+.modal-header {
+  background-color: #e74c3c;
+  color: white;
 }
 </style>

@@ -22,7 +22,6 @@
   margin-bottom: 0 !important;
 }
 .logo-container {
-  position: fixed;
   z-index: 1;
   top: 0;
   left: 10px;

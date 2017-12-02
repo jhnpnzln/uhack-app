@@ -13,7 +13,7 @@
       <!-- WIZARD FORM -->
       <div class="row">
         <div class="col-md-12">
-          <form-wizard color="#1abc9c" title="Bagyo" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may bagyo."
+          <form-wizard @on-complete="onCompleteBagyo" color="#1abc9c" title="Bagyo" subtitle="Mga bagay na dapat gawin at hindi dapat gawin tuwing may bagyo."
             back-button-text="Bumalik"
             next-button-text="Sunod"
             finish-button-text="Isumite">
@@ -74,39 +74,141 @@
             </div>
             </tab-content>
             <!-- END PANEL 02 -->
-
-
-              <tab-content title="Mga tanong(tama o mali)" icon="fa fa-info">
-              <div class="panel panel-turquoise">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                 
-                </h4>
-              </div>
-              <div class="panel-body">
-                   <p>1. Makinig sa radyo o manood sa telebisyon tungkol sa weather updates</p>
-                    <input type="radio" name="question1"    value="Tama" >Tama
-                    <input type="radio" name="question1"   value="Mali" >Mali
-                    <p>2. Natiyak ba nating ang kable o outlet ay sakaling nakababad sa tubig?</p>
-                     <input type="radio" name="question2"    value="Tama" >Tama
-                    <input type="radio" name="question2"   value="Mali" >Mali
-                    <p>3. Nasuri mo ang iyong bahay kung ito ba ay matibay ,Manatili sa loob ng bahay? </p>
-                     <input type="radio" name="question3"    value="Tama" >Tama
-                    <input type="radio" name="question3"   value="Mali" >Mali
-                    <p>4. Mangisda sa kasagsagan ng bagyo?</p>
-                     <input type="radio" name="question4"    value="Tama" >Tama
-                    <input type="radio" name="question4"   value="Mali" >Mali
-                    <p>5. Maghanda ng ilawan at radyong de baterya</p>
-                     <input type="radio" name="question5"    value="Tama" >Tama
-                    <input type="radio" name="question5"   value="Mali" >Mali
-               </div>
-            </div>
-            </tab-content>
           </form-wizard>
         </div>
       </div>
       <!-- END WIZARD FORM -->
     </div>
+
+    <!-- ************** MODAL *************** -->
+    <modal name="bagyoModal" width="50%" height="auto" :scrollable="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" @click="closeModal" style="color:white;">&times;</button>
+          <h4 class="modal-title"><i class="fa fa-question-circle"></i>&nbsp;Mga Tanong</h4>
+        </div>
+      </div>
+
+      <div class="modal_body">
+        <form action="">
+          <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>1. Makinig sa radyo o manood sa telebisyon tungkol sa weather updates</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio1"/>
+                      <label for="radio1">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio2" />
+                      <label for="radio2">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>2. Natiyak ba nating ang kable o outlet ay sakaling nakababad sa tubig?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio3"/>
+                      <label for="radio3">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio4" />
+                      <label for="radio4">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>3. Nasuri mo ang iyong bahay kung ito ba ay matibay ,Manatili sa loob ng bahay? </p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio5"/>
+                      <label for="radio5">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio6" />
+                      <label for="radio6">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>4. Mangisda sa kasagsagan ng bagyo?</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio7"/>
+                      <label for="radio7">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio8" />
+                      <label for="radio8">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12 col-xs-6">
+                  <p>5. Maghanda ng ilawan at radyong de baterya</p>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                      <input type="radio" name="radio" id="radio9"/>
+                      <label for="radio9">Tama</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                  <div class="funkyradio">
+                    <div class="funkyradio-danger">
+                      <input type="radio" name="radio" id="radio10" />
+                      <label for="radio10">Mali</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="button-container pull-right">
+                <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
+                <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
+              </div>
+              
+        </form>
+      </div>
+    </modal>
   </div>
 </template>
 
@@ -118,6 +220,18 @@ export default {
     Navbar,
     FormWizard,
     TabContent
+  },
+  methods: {
+    onCompleteBagyo () {
+      this.$modal.show('bagyoModal')
+    },
+    closeModal () {
+      this.$modal.hide('bagyoModal')
+    },
+    submit () {
+      this.$toastr.success('Naisumite na.', 'Ayos!')
+      this.closeModal()
+    }
   }
 }
 </script>
@@ -135,6 +249,10 @@ export default {
   background-size: cover;
   height: 650px;
   overflow: hidden;
+}
+.modal-header {
+  background-color: #1abc9c;
+  color: white;
 }
 </style>
 
