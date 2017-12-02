@@ -86,16 +86,16 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio1"/>
-                      <label for="radio1">Tama</label>
+                      <input type="radio" value="Tama" v-model="QLindol1" name="radio1" id="r1" />
+                      <label for="r1">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio2" />
-                      <label for="radio2">Mali</label>
+                      <input type="radio" value="Mali" v-model="QLindol1" name="radio1"  id="r2"  />
+                      <label for="r2">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -108,16 +108,16 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio3"/>
-                      <label for="radio3">Tama</label>
+                      <input type="radio" value="Tama" v-model="QLindol2" name="radio2"  id="r3" />
+                      <label for="r3">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio3" />
-                      <label for="radio3">Mali</label>
+                      <input type="radio" value="Mali" v-model="QLindol2" name="radio2" id="r4"  />
+                      <label for="r4">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -130,16 +130,16 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio4"/>
-                      <label for="radio4">Tama</label>
+                      <input type="radio" value="Tama" v-model="QLindol3" name="radio3" id="r5"  />
+                      <label for="r5">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio5" />
-                      <label for="radio5">Mali</label>
+                      <input type="radio" value="Mali" v-model="QLindol3" name="radio3"  id="r6"  />
+                      <label for="r6">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -152,16 +152,16 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio6"/>
-                      <label for="radio6">Tama</label>
+                      <input type="radio" value="Tama" v-model="QLindol4" name="radio4" id="r7"  />
+                      <label for="r7">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio7" />
-                      <label for="radio7">Mali</label>
+                      <input type="radio" value="Mali" v-model="QLindol4" name="radio4" id="r8"  />
+                      <label for="r8">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -174,16 +174,16 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio8"/>
-                      <label for="radio8">Tama</label>
+                      <input type="radio" value="Tama" v-model="QLindol5" name="radio5" id="r9"  />
+                      <label for="r9">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio9" />
-                      <label for="radio9">Mali</label>
+                      <input type="radio" value="Mali" v-model="QLindol5" name="radio5" id="r10" />
+                      <label for="r10">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -196,16 +196,16 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio10"/>
-                      <label for="radio8">Tama</label>
+                      <input type="radio" value="Tama" v-model="QLindol6" name="radio12" id="r11" />
+                      <label for="r11">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio11" />
-                      <label for="radio9">Mali</label>
+                      <input type="radio" value="Mali" v-model="QLindol6" name="radio12"  id="r12" />
+                      <label for="r12">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -225,6 +225,18 @@
 import Navbar from './Navbar'
 import {FormWizard, TabContent} from 'vue-form-wizard'
 export default {
+  data: function () {
+    return {
+      QLindol1: '',
+      QLindol2: '',
+      QLindol3: '',
+      QLindol4: '',
+      QLindol5: '',
+      QLindol6: '',
+      Score: 0,
+      Pass: 4
+    }
+  },
   components: {
     Navbar,
     FormWizard,
@@ -238,8 +250,43 @@ export default {
       this.$modal.hide('lindolModal')
     },
     submit () {
-      this.closeModal()
-      this.$toastr.success('Na-isumite na.', 'Ayos!')
+      if (this.QLindol1 === 'Mali') {
+        this.Score++
+      }
+      if (this.QLindol2 === 'Tama') {
+        this.Score++
+      }
+      if (this.QLindol3 === 'Tama') {
+        this.Score++
+      }
+      if (this.QLindol4 === 'Tama') {
+        this.Score++
+      }
+      if (this.QLindol5 === 'Tama') {
+        this.Score++
+      }
+      if (this.QLindol6 === 'Tama') {
+        this.Score++
+      }
+      if (this.Score > this.Pass) {
+        this.$toastr.success('Na-isumite na.', 'Ayos!')
+        this.closeModal()
+        this.QLindol1 = ''
+        this.QLindol2 = ''
+        this.QLindol3 = ''
+        this.QLindol4 = ''
+        this.QLindol5 = ''
+        this.QLindol6 = ''
+      }
+      else {
+        this.closeModal()
+        this.QLindol1 = ''
+        this.QLindol2 = ''
+        this.QLindol3 = ''
+        this.QLindol4 = ''
+        this.QLindol5 = ''
+        this.QLindol6 = ''
+      }
     }
   }
 }

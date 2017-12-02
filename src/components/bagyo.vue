@@ -98,7 +98,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio1"/>
+                      <input type="radio" value="Tama" v-model="QBagyo1" name="radio1" id="radio1"/>
                       <label for="radio1">Tama</label>
                     </div>
                   </div>
@@ -106,7 +106,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio2" />
+                      <input type="radio" value="Mali" v-model="QBagyo1" name="radio1" id="radio2" />
                       <label for="radio2">Mali</label>
                     </div>
                   </div>
@@ -120,7 +120,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio3"/>
+                      <input type="radio" value="Tama" v-model="QBagyo2" name="radio2" id="radio3"/>
                       <label for="radio3">Tama</label>
                     </div>
                   </div>
@@ -128,7 +128,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio4" />
+                      <input type="radio" value="Mali" v-model="QBagyo2" name="radio2" id="radio4" />
                       <label for="radio4">Mali</label>
                     </div>
                   </div>
@@ -142,7 +142,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio5"/>
+                      <input type="radio" value="Tama" v-model="QBagyo3" name="radio3" id="radio5"/>
                       <label for="radio5">Tama</label>
                     </div>
                   </div>
@@ -150,7 +150,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio6" />
+                      <input type="radio" value="Mali" v-model="QBagyo3" name="radio3" id="radio6" />
                       <label for="radio6">Mali</label>
                     </div>
                   </div>
@@ -164,7 +164,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio7"/>
+                      <input type="radio" value="Tama" v-model="QBagyo4" name="radio4" id="radio7"/>
                       <label for="radio7">Tama</label>
                     </div>
                   </div>
@@ -172,7 +172,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio8" />
+                      <input type="radio" value="Mali" v-model="QBagyo4" name="radio4" id="radio8" />
                       <label for="radio8">Mali</label>
                     </div>
                   </div>
@@ -186,7 +186,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio9"/>
+                      <input type="radio" value="Tama" v-model="QBagyo5" name="radio5" id="radio9"/>
                       <label for="radio9">Tama</label>
                     </div>
                   </div>
@@ -194,7 +194,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio10" />
+                      <input type="radio" value="Mali" v-model="QBagyo5" name="radio5" id="radio10" />
                       <label for="radio10">Mali</label>
                     </div>
                   </div>
@@ -216,6 +216,17 @@
 import Navbar from './Navbar'
 import {FormWizard, TabContent} from 'vue-form-wizard'
 export default {
+  data: function () {
+    return {
+      QBagyo1: '',
+      QBagyo2: '',
+      QBagyo3: '',
+      QBagyo4: '',
+      QBagyo5: '',
+      Score: 0,
+      Pass: 3
+    }
+  },
   components: {
     Navbar,
     FormWizard,
@@ -229,8 +240,38 @@ export default {
       this.$modal.hide('bagyoModal')
     },
     submit () {
-      this.$toastr.success('Naisumite na.', 'Ayos!')
-      this.closeModal()
+      if (this.QBagyo1 === 'Tama') {
+        this.Score++
+      }
+      if (this.QBagyo2 === 'Tama') {
+        this.Score++
+      }
+      if (this.QBagyo3 === 'Mali') {
+        this.Score++
+      }
+      if (this.QBagyo4 === 'Mali') {
+        this.Score++
+      }
+      if (this.QBagyo5 === 'Tama') {
+        this.Score++
+      }
+      if (this.Score > this.Pass) {
+        this.$toastr.success('Na-isumite na.', 'Ayos!')
+        this.closeModal()
+        this.QBagyo1 = ''
+        this.QBagyo2 = ''
+        this.QBagyo3 = ''
+        this.QBagyo4 = ''
+        this.QBagyo5 = ''
+      }
+      else {
+        this.closeModal()
+        this.QBagyo1 = ''
+        this.QBagyo2 = ''
+        this.QBagyo3 = ''
+        this.QBagyo4 = ''
+        this.QBagyo5 = ''
+      }
     }
   }
 }
