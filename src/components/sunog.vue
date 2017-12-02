@@ -90,7 +90,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio1"/>
+                      <input type="radio" value="Tama"  v-model="slctQ1" name="radio1" id="radio1" />
                       <label for="radio1">Tama</label>
                     </div>
                   </div>
@@ -98,7 +98,7 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio2" />
+                      <input type="radio"  value="Mali"  v-model="slctQ1"  name="radio1" id="radio2"  />
                       <label for="radio2">Mali</label>
                     </div>
                   </div>
@@ -114,16 +114,16 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio2"/>
-                      <label for="radio2">Tama</label>
+                      <input type="radio" value="Tama" v-model="slctQ2" name="radio2" id="radio3" />
+                      <label for="radio3">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio3" />
-                      <label for="radio3">Mali</label>
+                      <input type="radio" value="Mali" v-model="slctQ2" name="radio2" id="radio4" />
+                      <label for="radio4">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -138,16 +138,16 @@
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio4"/>
-                      <label for="radio4">Tama</label>
+                      <input type="radio" value="Tama" v-model="slctQ3" name="radio3" id="radio5"/>
+                      <label for="radio5">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio5" />
-                      <label for="radio5">Mali</label>
+                      <input type="radio" value="Mali" v-model="slctQ3" name="radio3" id="radio6"  />
+                      <label for="radio6">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -157,21 +157,21 @@
           <div class="form-group row">
             <div class="funkyradio">
                 <div class="col-md-12 col-xs-6">
-                  <h4 class="panel-title"> Mga tanong(tama o mali)</h4>
+                  <h4 class="panel-title">4.Ibaba ang main switch?</h4>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-warning">
-                      <input type="radio" name="radio" id="radio6"/>
-                      <label for="radio6">Tama</label>
+                      <input type="radio" value="Tama" v-model="slctQ4" name="radio4" id="radio7" />
+                      <label for="radio7">Tama</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                   <div class="funkyradio">
                     <div class="funkyradio-danger">
-                      <input type="radio" name="radio" id="radio7" />
-                      <label for="radio7">Mali</label>
+                      <input type="radio" value="Mali" v-model="slctQ4" name="radio4" id="radio8"  />
+                      <label for="radio8">Mali</label>
                     </div>
                   </div>
                 </div>
@@ -194,6 +194,16 @@
 import Navbar from './Navbar'
 import {FormWizard, TabContent} from 'vue-form-wizard'
 export default {
+  data: function () {
+    return {
+      slctQ1: '',
+      slctQ2: '',
+      slctQ3: '',
+      slctQ4: '',
+      score: 0,
+      pass: 2
+    }
+  },
   components: {
     Navbar,
     FormWizard,
@@ -207,8 +217,33 @@ export default {
       this.$modal.hide('sunogModal')
     },
     submit () {
-      this.$toastr('Naisumite na!', 'Ayos!')
-      this.closeModal()
+      if (this.slctQ1 === 'Tama') {
+        this.score++
+      }
+      if (this.slctQ2 === 'Tama') {
+        this.score++
+      }
+      if (this.slctQ3 === 'Tama') {
+        this.score++
+      }
+      if (this.slctQ4 === 'Tama') {
+        this.score++
+      }
+      if (this.score > this.pass) {
+        this.$toastr.success('Na-isumite na.', 'Ayos!')
+        this.$modal.hide('sunogModal')
+        this.slctQ1 = ''
+        this.slctQ2 = ''
+        this.slctQ3 = ''
+        this.slctQ4 = ''
+      }
+      else {
+        this.$modal.hide('sunogModal')
+        this.slctQ1 = ''
+        this.slctQ2 = ''
+        this.slctQ3 = ''
+        this.slctQ4 = ''
+      }
     }
   }
 }
