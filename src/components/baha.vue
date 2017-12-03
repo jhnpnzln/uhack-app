@@ -104,7 +104,7 @@
           </div>
         </div>
         <div class="modal_body">
-          <form action="">
+          <form action="" v-on:submit="submitBaha()">
             <div class="form-group row">
                 <div class="col-md-12 col-xs-6">
                   <p>1. Lumangoy sa baha. </p>
@@ -238,7 +238,7 @@
               </div>
 
                   <div class="button-container pull-right">
-                    <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
+                    <button class="btn btn-success" type="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
                     <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
                   </div>
         </form>
@@ -277,7 +277,7 @@ export default {
     closeModal () {
       this.$modal.hide('sunogModal')
     },
-    submit () {
+    submitBaha () {
       if (this.score >= 4) {
         this.$toastr.success('Nakakuha ka ng mataas na puntos', 'Puntos')
         this.$toastr.success('Naipasamo ang pagsusulit.', 'Ayos!')

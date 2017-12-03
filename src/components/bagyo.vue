@@ -90,7 +90,7 @@
       </div>
 
       <div class="modal_body">
-        <form action="">
+        <form action="" v-on:submit="bagyoSubmit()">
           <div class="form-group row">
                 <div class="col-md-12 col-xs-6">
                   <p>1. Makinig sa radyo o manood sa telebisyon tungkol sa weather updates</p>
@@ -202,7 +202,7 @@
               </div>
 
               <div class="button-container pull-right">
-                <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
+                <button class="btn btn-success" type="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
                 <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
               </div>
               
@@ -239,7 +239,7 @@ export default {
     closeModal () {
       this.$modal.hide('bagyoModal')
     },
-    submit () {
+    bagyoSubmit () {
       if (this.QBagyo1 === 'Tama') {
         this.Score++
       }

@@ -40,7 +40,7 @@
                   <li>
                     <div class="legendBullet yellow width"></div>
                   </li>
-                  <li>&nbsp</li>
+                  <li>&nbsp;</li>
                   <li>
                     <div class="legendBullet green width"></div>
                   </li>

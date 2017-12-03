@@ -81,7 +81,7 @@
       </div>
 
       <div class="modal_body">
-        <form action="">
+        <form action="" v-on:submit="sunogSubmit()">
           <div class="form-group row">
             <div class="funkyradio">
                 <div class="col-md-12 col-xs-6">
@@ -179,7 +179,7 @@
           </div>
 
           <div class="button-container pull-right">
-            <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
+            <button class="btn btn-success" type="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
             <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
           </div>
         </form>
@@ -216,7 +216,7 @@ export default {
     closeModal () {
       this.$modal.hide('sunogModal')
     },
-    submit () {
+    sunogSubmit () {
       if (this.slctQ1 === 'Tama') {
         this.score++
       }

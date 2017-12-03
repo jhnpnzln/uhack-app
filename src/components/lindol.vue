@@ -78,7 +78,7 @@
         </div>
       </div>
       <div class="modal_body">
-        <form action="">
+        <form action="" v-on:submit="submitLindol()">
           <div class="form-group row">
                 <div class="col-md-12 col-xs-6">
                   <p>1. Magwalang bahala, matatapos din yan..  </p>
@@ -212,7 +212,7 @@
               </div>
 
               <div class="button-container pull-right">
-                <button class="btn btn-success" @click="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
+                <button class="btn btn-success"type="submit"><i class="fa fa-check"></i>&nbsp;Isumite</button>
                 <button class="btn btn-default"><i class="fa fa-ban"></i>&nbsp;Ikansela</button>
               </div>
 
@@ -249,7 +249,7 @@ export default {
     closeModal () {
       this.$modal.hide('lindolModal')
     },
-    submit () {
+    submitLindol () {
       if (this.QLindol1 === 'Mali') {
         this.Score += 1
       }
